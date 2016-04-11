@@ -1,0 +1,7 @@
+ <% @recent_media.each do |instagram| %>
+    <%= image_tag instagram.images.standard_resolution.url %>
+<% end %>
+
+<pre>
+  <%= @recent_media.inspect %>
+</pre>
