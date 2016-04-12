@@ -13,7 +13,6 @@ class HomeController < ApplicationController
     # @result['data'].each do |image|
     #     @array.push(image)
     # end
-
     # @test = @result["data"]
 
   end

@@ -27,10 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'instagram'
 
 # in order to do http requests
-gem 'httparty'
+# gem 'httparty'
 
 # For Json parsing?
-gem 'activesupport'
+# gem 'activesupport'
 
 # Figaro for environment variables
 gem 'figaro'
