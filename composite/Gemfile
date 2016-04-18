@@ -35,6 +35,9 @@ gem 'instagram'
 # Figaro for environment variables
 gem 'figaro'
 
+# Ruby OpenCV for face detection
+gem 'ruby-opencv'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

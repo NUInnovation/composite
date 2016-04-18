@@ -1,20 +1,25 @@
 class HomeController < ApplicationController
   
-  require 'json'
+  require 'opencv'
+  include OpenCV
+
 
   def index
 
     @client = Instagram.client(:access_token => Instagram.access_token)
     @instagram = @client.media_search("37.7808851", "-122.3948632")
 
-    # @response = HTTParty.get("https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=40497799.1677ed0.edc9f94205964f5abb2e97567d6057f0")
-    # @result = JSON.parse(@response.body)
-    # @array = []
-    # @result['data'].each do |image|
-    #     @array.push(image)
-    # end
-    # @test = @result["data"]
+    "Usage: your_app_name source dest"
 
+    data = "vendor/assets/opencv/haarcascade_frontalface_alt.xml"
+    detector = OpenCV::CvHaarClassifierCascade::load(data)
+    image = OpenCV::IplImage.load("vendor/assets/opencv/faces.jpg")
+    detector.detect_objects(image) do |region|
+      color = OpenCV::CvColor::Blue
+      image.rectangle! region.top_left, region.bottom_right, :color => color
+    end
+    image.save_image("vendor/assets/opencv/results.jpg")
+    
   end
 
 end
