@@ -1,5 +1,44 @@
-<h3>Composite</h3>
 
-<% @instagram.each do |instagram| %>
-    <%= image_tag instagram.images.standard_resolution.url %>
-<% end %>
+<div>
+    <center><%= image_tag "composite_logo2.png", :class => "logo" %></center>
+    <h1 class="title">Composite</h1>
+    <h5 class="tagline">GEOGRAPHIC FACE AGGREGATION</h5>
+    <center>
+        <form>
+            <input type="text" placeholder="Enter a location" class="search" id="txtPlaces" required>
+            <input type="button" class="button" value="Search">
+        </form>
+    </center>
+</div>
+
+<div class="faces">
+    <center>
+        <!-- @html.html_safe put this in embedded rb -->
+        <% @img_paths.each do |image| %>
+            <%= image_tag image, :class => "images" %>
+        <% end %>
+    </center>
+<div>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript">
+    google.maps.event.addDomListener(window, 'load', function () {
+        var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+        google.maps.event.addListener(places, 'place_changed', function () {
+            var place = places.getPlace();
+            var address = place.formatted_address;
+            var latitude = place.geometry.location.lat();
+            var longitude = place.geometry.location.lng();
+            var mesg = "Address: " + address;
+            var lng = document.getElementById('longitude');
+            var lat = document.getElementById('latitude');
+            var url = window.location.href;    
+            if (url.indexOf('?') > -1){
+                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude
+            }else{
+                url += '?lat='+latitude+"&lng="+longitude
+            }
+            window.location.href = url;
+        });
+    });
+</script>

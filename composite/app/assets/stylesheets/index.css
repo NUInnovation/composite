@@ -1,3 +1,68 @@
-.face {
-    border: 2px solid #FFF;
+@font-face {
+  font-family: 'ACaslon-Pro';
+  src:url('ACaslonPro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'ACaslon-Pro';
+  color: #363636;
+}
+
+.logo {
+  width: 50px;
+  margin-top: 1.5em;
+}
+
+.title {
+  text-align: center;
+  font-family: 'ACaslon-Pro';
+  letter-spacing: .03em;
+  margin-top: .1em;
+  margin-bottom: 0px;
+}
+
+.tagline {
+  text-align: center;
+  letter-spacing: .1em;
+  margin-top: .5em;
+  color: #414141;
+}
+
+.faces {
+  margin-top: 2em;
+}
+
+.images {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+}
+
+form {
+  width:500px;
+  align-content: center;
+}
+
+.search {
+  width:100px;
+  padding:8px 15px;
+  background: #fff;
+  border:1px solid #363636;
+}
+
+.button {
+  left:-8px;
+  border:2px solid #fff;
+  background-color:#fff;
+  color:#363636;
+}
+
+.button:hover  {
+  color:#660066;
+}
+
+input:focus {
+    outline:none;
 }
