@@ -6,7 +6,6 @@
     <center>
         <form>
             <input type="text" placeholder="Enter a location" class="search" id="txtPlaces" required>
-            <input type="button" class="button" value="Search">
         </form>
     </center>
 </div>
@@ -15,12 +14,15 @@
     <center>
         <!-- @html.html_safe put this in embedded rb -->
         <% @img_paths.each do |image| %>
-            <%= image_tag image, :class => "images" %>
+            <%= link_to image.link, :class => "links", :target => "_blank" do %>
+                <%= image_tag(image.name, :class => "images") %>
+            <% end %>
         <% end %>
     </center>
 <div>
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+
 <script type="text/javascript">
     google.maps.event.addDomListener(window, 'load', function () {
         var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
@@ -29,15 +31,17 @@
             var address = place.formatted_address;
             var latitude = place.geometry.location.lat();
             var longitude = place.geometry.location.lng();
-            var mesg = "Address: " + address;
-            var lng = document.getElementById('longitude');
-            var lat = document.getElementById('latitude');
-            var url = window.location.href;    
+            var location = document.getElementById('txtPlaces');
+            var url = window.location.href;
+            
             if (url.indexOf('?') > -1){
-                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude
-            }else{
-                url += '?lat='+latitude+"&lng="+longitude
+                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s;
+                console.log("First");
+            } else {
+                url += '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s;
+                console.log("Second");
             }
+
             window.location.href = url;
         });
     });

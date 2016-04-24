@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
   require 'net/http'
   require 'uri'
+  require 'ostruct'
 
   include OpenCV
 
@@ -16,6 +17,11 @@ class HomeController < ApplicationController
     @client = Instagram.client(:access_token => Instagram.access_token)
     #@instagram = @client.media_search("37.7808851", "-122.3948632")
 
+    puts params[:lat].blank?
+    puts params[:lat]
+    puts params[:lng].blank?
+    puts params[:lng]
+    
     unless params[:lat].blank? && params[:long].blank?
       @instagram = @client.media_search(params[:lat], params[:lng])
     else
@@ -53,7 +59,10 @@ class HomeController < ApplicationController
         path = "app/assets/images/" + file_name
         face_img.save_image(path)
         face_id += 1
-        @img_paths.push(file_name)
+        face = OpenStruct.new
+        face.name = file_name
+        face.link = media2.images.standard_resolution.url.to_s
+        @img_paths.push(face)
       end
 
     end

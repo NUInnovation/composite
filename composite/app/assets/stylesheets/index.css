@@ -46,13 +46,17 @@ form {
 }
 
 .search {
-  width:100px;
+  width:200px;
   padding:8px 15px;
   background: #fff;
   border:1px solid #363636;
 }
 
-.button {
+.links {
+  text-decoration: none;
+}
+
+/*.button {
   left:-8px;
   border:2px solid #fff;
   background-color:#fff;
@@ -61,7 +65,7 @@ form {
 
 .button:hover  {
   color:#660066;
-}
+}*/
 
 input:focus {
     outline:none;
