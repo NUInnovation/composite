@@ -21,6 +21,8 @@ class HomeController < ApplicationController
     puts params[:lat]
     puts params[:lng].blank?
     puts params[:lng]
+
+    puts params[:current]
     
     unless params[:lat].blank? && params[:long].blank?
       @instagram = @client.media_search(params[:lat], params[:lng])

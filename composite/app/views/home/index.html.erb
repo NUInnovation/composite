@@ -10,6 +10,10 @@
     </center>
 </div>
 
+<div class="locale">
+<%= params[:current] %>
+</div>    
+
 <div class="faces">
     <center>
         <!-- @html.html_safe put this in embedded rb -->
@@ -35,7 +39,7 @@
             var url = window.location.href;
             
             if (url.indexOf('?') > -1){
-                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s;
+                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude+"&current="+place.formatted_address;
                 console.log("First");
             } else {
                 url += '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s;
@@ -43,6 +47,7 @@
             }
 
             window.location.href = url;
+            // document.getElementById('locale').value = address; 
         });
     });
 </script>
