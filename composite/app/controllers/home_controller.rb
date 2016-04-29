@@ -12,64 +12,59 @@ class HomeController < ApplicationController
 
 
   def index
-
-    # Instagram API Calls
-    @client = Instagram.client(:access_token => Instagram.access_token)
-    #@instagram = @client.media_search("37.7808851", "-122.3948632")
     
-    unless params[:lat].blank? && params[:long].blank?
-      @instagram = @client.media_search(params[:lat], params[:lng], options = {:count => 50})
-    else
-      @instagram = @client.media_search("37.7808851", "-122.3948632", options = {:count => 50})
-      params[:current] = "Evanston, IL, USA"
-    end
-
-    # Alternate way to print content to screen
-    #@html = ""
-    #for media in @instagram
-    #  @html << "<img src='#{media.images.thumbnail.url}'>"
-    #end
-    
-    # # The below is our face recognition on saved images
-    data = "vendor/assets/opencv/haarcascade_frontalface_alt.xml"
-    detector = OpenCV::CvHaarClassifierCascade::load(data)
-
+    # Array for displaying images on index, and flag for empty state
     @img_paths = []
-    num = 0
+    @flag = true
 
-    for photo in @instagram
+    # Only if we have a search query from the user
+    unless params[:lat].blank? && params[:long].blank?
 
-      puts num
-      num+=1
+      @flag = false
 
-      insta_img = Net::HTTP.get(URI.parse(photo.images.standard_resolution.url))
-      temp = Tempfile.new(['img','.jpg'])
-      insta_img.force_encoding('UTF-8')
-      temp.write(insta_img)
+      # Instagram API preparation and query
+      @client = Instagram.client(:access_token => Instagram.access_token)
+      @instagram = @client.media_search(params[:lat], params[:lng], options = {:count => 60})
       
-      #debugging step
-      puts temp.path
+      # Face recognition -- Loading the training data
+      data = "vendor/assets/opencv/haarcascade_frontalface_alt.xml"
+      detector = OpenCV::CvHaarClassifierCascade::load(data)
 
-      #add error handling HERE
-      image = OpenCV::IplImage.load(temp.path, iscolor = CV_LOAD_IMAGE_GRAYSCALE)
-      face_id = 0
+      for photo in @instagram
 
-      detector.detect_objects(image) do |region|
-        #image.rectangle! region.top_left, region.bottom_right, :color => color
-        face_img = image.sub_rect( region )
-        file_name = photo.id.to_s + "_face_" + face_id.to_s + ".jpg"
-        path = "app/assets/images/" + file_name
-        face_img.save_image(path)
-        face_id += 1
-        face = OpenStruct.new
-        face.name = file_name
-        face.link = photo.images.standard_resolution.url.to_s
-        @img_paths.push(face)
-        break if @img_paths.length >= 21
+        # Load the image in temporary storage in order to make it available for Open CV to process
+        insta_img = Net::HTTP.get(URI.parse(photo.images.standard_resolution.url))
+        temp = Tempfile.new(['img','.jpg'])
+        insta_img.force_encoding('UTF-8')
+        temp.write(insta_img)
+        
+        #debugging step -- delete
+        puts temp.path
+
+        # Add error handling HERE for bad image paths (rare case)
+        # Open the image with OpenCV -- GrayScale has better facial recognition accuracy and/or speed?
+        image = OpenCV::IplImage.load(temp.path, iscolor = CV_LOAD_IMAGE_GRAYSCALE)
+
+        # Used for appending unique identifier to multiple faces detected in the same image
+        face_id = 0
+
+        # Faces detected for each image in this loop
+        # For each face, grab its name and url to original image, place them in struct and insert into array
+        detector.detect_objects(image) do |region|
+          face_img = image.sub_rect(region)
+          file_name = photo.id.to_s + "_face_" + face_id.to_s + ".jpg"
+          path = "app/assets/images/" + file_name
+          face_img.save_image(path)
+          face_id += 1
+          face = OpenStruct.new
+          face.name = file_name
+          face.link = photo.images.standard_resolution.url.to_s
+          @img_paths.push(face)
+          break if @img_paths.length >= 28 # enough photos for us to display
+        end
+        break if @img_paths.length >= 28 # enough photos for us to display
       end
-      break if @img_paths.length >= 21
     end
-
   end
 end
 

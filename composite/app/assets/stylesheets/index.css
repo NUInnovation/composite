@@ -67,12 +67,16 @@ input:focus {
     outline:none;
 }
 
-.locale{
-    font-weight: lighter;
-    font-family: 'ACaslon-Pro';
-    margin-left: 47px;
-    margin-bottom: -15px;
-    font-size: 14px;
-    margin-top: 20px;
-    color: #414141;
+#locale{
+  font-weight: lighter;
+  font-family: 'ACaslon-Pro';
+  margin-left: 47px;
+  margin-bottom: -15px;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #414141;
+}
+
+#empty {
+  margin-top: 5em;
 }

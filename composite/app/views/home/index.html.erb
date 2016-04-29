@@ -9,18 +9,23 @@
     </center>
 </div>
 
-<div class="locale">
+<div id="locale">
     <%= params[:current] %>
 </div>    
 
 <div class="faces">
     <center>
-        <!-- @html.html_safe put this in embedded rb -->
+
+        <% if @flag %>
+            <h5 id="empty">Search a location to get started.</h5>
+        <% end %>
+
         <% @img_paths.each do |image| %>
             <%= link_to image.link, :class => "links", :target => "_blank" do %>
                 <%= image_tag(image.name, :class => "images") %>
             <% end %>
         <% end %>
+
     </center>
 <div>
 
