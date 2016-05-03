@@ -1,0 +1,332 @@
+
+
+Started GET "/" for ::1 at 2016-05-02 18:57:40 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1256ms (Views: 1245.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/index.self-f21d0d7c81a3122aa76ed791fc699777eb5a765ae3dc026450d760bb1d63ba03.css?body=1" for ::1 at 2016-05-02 18:57:41 -0500
+
+
+Started GET "/assets/ACaslonPro-Regular.otf" for ::1 at 2016-05-02 18:57:42 -0500
+
+
+Started GET "/" for ::1 at 2016-05-02 18:57:51 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?lat=39.9525839&lng=-75.16522150000003&current=undefined" for ::1 at 2016-05-02 18:57:51 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"39.9525839", "lng"=>"-75.16522150000003", "current"=>"undefined"}
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 0.0ms)
+
+Instagram::BadRequest (GET https://api.instagram.com/v1/media/search.json?count=60&lat=39.9525839&lng=-75.16522150000003: 400: Missing client_id or access_token URL parameter.):
+  app/controllers/home_controller.rb:27:in `index'
+
+
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.5ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.3ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brownrout/.rvm/gems/ruby-2.1.8/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (48.5ms)
+
+
+Started GET "/" for ::1 at 2016-05-02 19:00:05 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 234ms (Views: 225.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?lat=39.9525839&lng=-75.16522150000003&current=undefined" for ::1 at 2016-05-02 19:00:10 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"39.9525839", "lng"=>"-75.16522150000003", "current"=>"undefined"}
+  Rendered home/index.html.erb within layouts/application (265.4ms)
+Completed 200 OK in 12266ms (Views: 328.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/1241626647469386966_1742721178_face_0-6705dc8a97f261fffc8f61f2335651a0f1861057beacb9bb47ea2d117400092d.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241626647469386966_1742721178_face_1-e6198b805a9b392e975570f1bf2a75415261f6fcc659acc160a837b76b09df06.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241626606582880445_44145757_face_0-b38702d93deab6124a8bb383d67b7e5b40ecd23eebaa57ee790c836c2661fb2e.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241626606582880445_44145757_face_1-4847be553d816943691a75d1dfc61bd3985733d51b47d4f8a38efc8aed91d0b8.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241625516273795406_3130090991_face_0-e23a2d208b7d9d6325768bb8f553e58217fe0a50a4edaf255aaa4dd5268ed735.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241625457888947968_1455870858_face_0-55e26ad01b1e949099a9ae3812436bbdae86b16e5da557141c8ec73cabd5aa11.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241622567276382445_51051921_face_0-044e80da04b5b7b48bf406dc7bbddc6e1a5fc9bc3009aded023d758049ae6ce3.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621711783761998_250514645_face_2-fe12d1cebcb9f0c5f48bc23ed86a280ad830f47b72a27311b5928111b4099d30.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621973716197580_823477839_face_0-290ebf93d040e10d330b06c242e087526fc1852c9abf9214e6d896571f510d0b.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241622213304873984_13929444_face_0-8696d409e6bd795d42c24cb14865f8f576388d8f475d68c9e77e654ff6754c93.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621520689338370_27167757_face_0-95253ff44bfb03126452ec1c5553df0cd2b8bdd896859e5d1fe96b16474c1e80.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621711783761998_250514645_face_3-a07b90f0fdacd5082d9c6c464453eb8f66cce4f2995d6367d621410c8d083c83.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241624138614600884_1339597844_face_0-a2aef859f51d38f92420f42a76b48c0b0cc068868893823a0c99e256e7359e94.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241622213304873984_13929444_face_1-b721eca262805fed609b7eac662f93abae792ba4e73afbb2f90ee3b0d6406f78.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241624943139542277_91588_face_0-2fecae83722135732ecb34cba7cea119c5fc4a72ce7cfc9354d043c3e132f208.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621520689338370_27167757_face_1-dfadebab262774566b60a4d6eb70b143af3bea8e00f43459623c5cc0b9875ae3.jpg" for ::1 at 2016-05-02 19:00:22 -0500
+
+
+Started GET "/assets/1241621711783761998_250514645_face_1-b71fff5a9ecccee669f395760630f6531c0461f7327dbedb42eb420eee322a0f.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241621520689338370_27167757_face_2-b8a8a464b405bc41963afdc4ecfc676dd8c6f81036b09045a5d614d3a003cda9.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241621711783761998_250514645_face_0-6419fb6efff6182556f70cff142b33e5cca86b0ebe043a9ff7a44b61b3114bd6.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241622663350884712_612011701_face_0-f44a2b88c514c85b8f7911ec30e21d18786008d84e626b0ee107094fbc0ec854.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241624943139542277_91588_face_1-793bc7eea17a8f6808cb468ce09c5427436e6b4869b52802adede49bfa670ec9.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241624138614600884_1339597844_face_1-3a545b380d6d01d1109a03f69def9a952fcd48517a2f1f6ce7f8be6a9dceda26.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241625457888947968_1455870858_face_1-0d8be69afdde38861997e815963bbdf56111492585c9cadd44397d432f63a52d.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241625206943091169_1440225_face_0-aef248e600a5bd06f20c3bccc0e6e7482028aa6160fa7ddda2fdbd6f9b138b73.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241621193334028266_1684444_face_0-0c76e468c1d5a37dc7ef54e6e5ad474586538abff1d686ea1b5b720d12ba1742.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241621193334028266_1684444_face_1-ee335ba79a0adde920b4e596aea8460fa1e7c762ca9d956748f45ca77fd74ac8.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241620539204884655_1727229_face_0-2c90abc06d469cf1e2125ad96f6c64a419b1da96af8c4079a49bf6fa9ad25014.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/assets/1241621193334028266_1684444_face_2-44b5dc423edf43b0a6d3b3f8ab1607eebc81254ae408d714256afe4906720b7a.jpg" for ::1 at 2016-05-02 19:00:23 -0500
+
+
+Started GET "/" for ::1 at 2016-05-02 19:00:39 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?lat=33.7489954&lng=-84.3879824&current=Atlanta,%20GA,%20USA" for ::1 at 2016-05-02 19:00:39 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"33.7489954", "lng"=>"-84.3879824", "current"=>"Atlanta, GA, USA"}
+  Rendered home/index.html.erb within layouts/application (319.8ms)
+Completed 200 OK in 17073ms (Views: 394.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/1241627977704320575_858464138_face_0-dfc8874db39f1e886c14363e11d35da7c364b0849bc6065a5cd5c8a3f70d91bb.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241627526847794790_1476591794_face_0-6e4e2ff302b0f3f8ce5fc6a5065a45aa983f66400a59e9f6f411f79e73259cce.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241626232853283809_2099010431_face_0-048e8f344b419b210706742ba3d6a399a890fd0806e55fddf767848e6af0ae58.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241626232853283809_2099010431_face_1-c11a2ccc294ab6a75b7df5e776728cb5a0828b194ce7c03fad6c8bdccd49baee.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241626057048930784_181204429_face_0-8ef5e5096f7f8ddb257d9223c0f8f4bd10df53d92ae8224a05a6eaad18ca560b.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241626002639682783_29918710_face_0-fb911b94b41c7b59319210049828cd6494d93ded7770fdc1750533b039b55801.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241627351610569706_1522457571_face_0-66a3cd1833880fffa65eae71e628bf64d4e638c3f1988d61e7f6adab365a1282.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241626002639682783_29918710_face_1-0231f517f13e191cd9ce610ce3f07662cd62e617e9a1301f2d93a41b085975a7.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241625831805290082_3012968328_face_0-ac1df33e7d9f2d1312e11364a70eead96f46f053cda61958f23e8bcfe31bbab2.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241625831805290082_3012968328_face_1-1031d0233421962afaabad9c4c1ef603f44e5d92f07eabca1c3fecfb4cde48ce.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241625022028593987_507259109_face_0-46cb790c9afa242b01045e4129b12d40acd57a1d20407764e4325db9ec9d914e.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241625831805290082_3012968328_face_2-de0413438c00294fc43751a69f0231c7c32ea167d776bd15c369583864070e69.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241624592974795982_2068132484_face_0-ae52d4f656442c6eeceb93c04147a0e5ba7cb4a6701b3f9733f51cc5e86afed3.jpg" for ::1 at 2016-05-02 19:00:56 -0500
+
+
+Started GET "/assets/1241624592974795982_2068132484_face_1-ef597b4cda3604015834e9bfc529d90fe1ee7bfc555ac39f910167e1425c359c.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241624307612185662_409863516_face_0-fa7778fc7e218b0344c4dad2ef0ad2994d3c5ae10dfea8da7e869cf97d08dbd9.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623921709799532_230972293_face_0-5bc0072290007fb4123676b6e7459e8c8e222e80f5b7683907155f577a5a71c8.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623682734690627_51411859_face_0-0de79a8e8d08a2c5910b1a8ae77d043ea62a18901041c3ca0679c790adaddc08.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623420776685164_1299503270_face_0-b5f5bbac72b0c302f51314e5effa4919a820536b017d9be0752d0381e9522b14.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623420776685164_1299503270_face_1-66dec40a444730d87ebba14486dced1c754163839e9d28c2c5b827c599580830.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623145603614481_1793231744_face_0-97e78e913d83a78fd7b4e4789d1e408f0fdde27f1a795ebf93827c2f62152fe2.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623145603614481_1793231744_face_1-aa231fa2681918c264a6bd2d77e32ce86f36c36987be863ffe66ce5cb5862079.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622838205040669_144198665_face_0-010b3a08bfe9bb887056848bc576ec6d989c04ea3ca316f0a116f08a592ac07c.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241623038765357286_11725821_face_0-1203739e9d41fc3a6bc4d089f2b0c4ce57760c1a562d5a4a44bf42d08a95bdd8.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622389002645101_31327858_face_0-076552a0801a46965a7ce8d6398641388e01d6db2c62a4cec5e9afd67a729c2b.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622539467966212_1793231744_face_0-0481d268058db923ae59ee2cb8b28b8d0b4f743c6474736d8bed33ba697b5bea.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622389002645101_31327858_face_1-02ce6aa6a03d72d2d58ed4b2088f2ab241156e0b9adef566cb51758982dcb059.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622389002645101_31327858_face_2-d121f9ec9980258b9b55876b887c75a7dc17074b1e877f29b91dd911ca2a0eab.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/assets/1241622348335154704_3012968328_face_0-07e61b85f6c25d24dc78f58b3d20c24c38201b3e43735010b00aff5109fe7d3a.jpg" for ::1 at 2016-05-02 19:00:57 -0500
+
+
+Started GET "/" for ::1 at 2016-05-02 19:01:18 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?lat=51.4977507&lng=-0.09946560000003046&current=103%20Gaunt%20St,%20London%20SE1%206DP,%20United%20Kingdom" for ::1 at 2016-05-02 19:01:25 -0500
+Processing by HomeController#index as HTML
+  Parameters: {"lat"=>"51.4977507", "lng"=>"-0.09946560000003046", "current"=>"103 Gaunt St, London SE1 6DP, United Kingdom"}
+  Rendered home/index.html.erb within layouts/application (275.7ms)
+Completed 200 OK in 8322ms (Views: 366.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/1241622385553927966_220341882_face_0-fbf5ab14c3f6d17f8276e82611ca4a66b2d6f6f6f162a1a9872526cb842e6246.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_1-7c43415cd8b144323506d0e99b4307746bc8afd54feeaef7ece72afe5acd4b8a.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_2-1ce97d88598b9c000770f1e568a7764af2026d3fbc6a59d3f9dae4e8f724c4c1.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_3-0714bdf828d4440ef98cc19909f213b888747e80f9aff0557c6cacd4f05a63c7.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_4-0e55771f9c129911ff61f52a53f1ed4ec48de03fa4a61a99d797f0d1a9bdfb0e.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_5-a634967d4de0e04bfaa4589e9f6cf89451147083baed2fe21a2ea52a681e1b61.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241580641266944222_1505783569_face_1-e073d69b9f982eec9314214e710e65a3548eee8996b2ff1092e0b5f1749972b8.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241573434024489867_278636499_face_2-da66beaae5464408746a979ed874555f472755f0d22c5366dadf5768223188dc.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_5-b3f3f21878137a394810212bb42e29f878b6ebff541433f935452eaaaa7f57a3.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_4-2ee2d651fbb2580a697c6f37652c95c6edfdeaa0e230260d509553327a34e8c5.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_0-dbd965db37437c142c624f5d36d20c0b18e6eca88dbad85f5ef0674fc0447092.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_1-a6b27f04b4cc414d10f7930f11d42a9d28d810fe8049574ddb71226387162912.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241605783743384319_196376553_face_0-501e6bda4b2336e446c87eec14aafaf89506053c166101ef14d727dc80c45945.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241596772133127614_514669368_face_0-b1fed566ac9f976a5b1bdeef814667938ad5269713069db9c7950fde73dd18e4.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241597465523842945_1405836210_face_0-ba979cce649f826d0da0aa6893c6c2112dcef26af1cbdc01af4a8a933df8bb57.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241622385553927966_220341882_face_6-c92f9fb324eb135c26fbf6964289c5bd88ce22321dd0afa3e310aedd1a1b1f68.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241592082084942827_2078516811_face_0-86da5140956d7a17aea2b63e08304d63627d1c5af23b35fcd462ff13072d68cc.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241597465523842945_1405836210_face_1-26fb4a2ce1adeb0b197e4c032b3f454ba269450ef695d1084851eca8c1c106aa.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241619764142048372_208954768_face_0-3e787e6d7620d1652befef2a16bde009d93dc4e72de8446a5dacf1ede36c11c7.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241573434024489867_278636499_face_3-3c60cbc67b165c2888a294c0baa1a59be6319e75e50b5b237597ef2000522c8d.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241590985149742241_239012910_face_0-64c1c6a7de6eaf8eea6b6a03f004a84b75d1fc644b16b2496a0bbcfe9a5459cc.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241576295076972682_217431777_face_0-6e4e970f8ce0e06216b34c62b13ad05f00b9d5f9656a6b8ca904bb406d2ac964.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241617418259432501_208954768_face_0-4e9af1740e08be41bbc2779719bfe7182413ec1f6f6e4ac14109909579272b1a.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241573434024489867_278636499_face_0-29076dd47340324346fe1376b54a3f5a7012efe75d18b6bb6e22635342bf368a.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_3-f02e12758fc49d7a418bb8996f81360989677dd7c0886f978b0df9731183117d.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241589018719528643_279968_face_2-309ca4736cbbc9a07806a1e0ceadcbdde45b61abb8e9e9ff669f7dc9059533e3.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241573434024489867_278636499_face_1-306fb2bd69922f6ea48756618bce8597fc65674bc6590930b3fb2c298fa262b6.jpg" for ::1 at 2016-05-02 19:01:33 -0500
+
+
+Started GET "/assets/1241580641266944222_1505783569_face_0-241e089126edbdcb9e6d4f4ce8ef88a5fed5cce49f27c1b44bdbc6bd981fb047.jpg" for ::1 at 2016-05-02 19:01:33 -0500
