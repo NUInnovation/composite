@@ -28,6 +28,9 @@ gem 'instagram'
 
 gem 'heroku'
 
+# for postgres?
+gem 'rails_12factor'
+
 # in order to do http requests
 # gem 'httparty'
 
