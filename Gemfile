@@ -26,9 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # use the Instagram API
 gem 'instagram'
 
-# unicorn server
-gem 'unicorn'
-
 # in order to do http requests
 # gem 'httparty'
 
