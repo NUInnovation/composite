@@ -26,16 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # use the Instagram API
 gem 'instagram'
 
-gem 'heroku'
-
 # for postgres?
 gem 'rails_12factor'
-
-# in order to do http requests
-# gem 'httparty'
-
-# For Json parsing?
-# gem 'activesupport'
 
 # Figaro for environment variables
 gem 'figaro'

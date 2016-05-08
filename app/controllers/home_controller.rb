@@ -58,7 +58,8 @@ class HomeController < ApplicationController
           face_id += 1
           face = OpenStruct.new
           face.name = file_name
-          face.link = photo.images.standard_resolution.url.to_s
+          #face.link = photo.images.standard_resolution.url.to_s
+          face.link = "https://picstuff.xyz/media/" + photo.id.to_s
           @img_paths.push(face)
           break if @img_paths.length >= 28 # enough photos for us to display
         end

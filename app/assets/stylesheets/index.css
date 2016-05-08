@@ -33,7 +33,8 @@ body {
 .images {
   width: 140px;
   height: 140px;
-  margin: 10px;
+  margin: none;
+  float: left;
 }
 
 form {

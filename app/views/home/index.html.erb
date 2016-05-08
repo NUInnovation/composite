@@ -43,15 +43,12 @@
             var url = window.location.href;
             
             if (url.indexOf('?') > -1){
-                url = url.split("?")[0] + '?lat='+latitude+"&lng="+longitude+"&current="+place.formatted_address;
-                console.log("First");
+                url = url.split("?")[0]+'?lat='+latitude+"&lng="+longitude+"&current="+place.formatted_address;
             } else {
-                url += '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s;
-                console.log("Second");
+                url += '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s+place.formatted_address;
             }
-
+            // setTimeout(check, 1000);
             window.location.href = url;
-            // document.getElementById('locale').value = address; 
         });
     });
 </script>
