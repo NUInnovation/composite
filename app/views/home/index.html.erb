@@ -27,7 +27,13 @@
         <% end %>
 
     </center>
-<div>
+</div>
+
+<% if not @flag %>
+    <div>
+        <button class="load"><h3>Load More</h3></button>
+    </div>
+<% end %>
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
 
@@ -45,7 +51,7 @@
             if (url.indexOf('?') > -1){
                 url = url.split("?")[0]+'?lat='+latitude+"&lng="+longitude+"&current="+place.formatted_address;
             } else {
-                url += '?lat='+latitude+"&lng="+longitude+"&current="+location.to_s+place.formatted_address;
+                url += '?lat='+latitude+"&lng="+longitude+"&current="+place.formatted_address;
             }
             // setTimeout(check, 1000);
             window.location.href = url;

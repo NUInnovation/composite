@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  # Copied from Pvmnt as example of API
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+        resources :home
+    end
+  end
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

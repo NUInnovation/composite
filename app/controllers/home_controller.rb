@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
 
   def index
-    
+
     # Array for displaying images on index, and flag for empty state
     @img_paths = []
     @flag = true
@@ -66,7 +66,12 @@ class HomeController < ApplicationController
         break if @img_paths.length >= 28 # enough photos for us to display
       end
     end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render :json => @img_paths.to_json }
+    # end
   end
+
 end
 
 

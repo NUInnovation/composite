@@ -68,6 +68,17 @@ input:focus {
     outline:none;
 }
 
+.load {
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  font-family: 'Helvetica';
+  background: #2E2E2E;
+  color: #fff;
+  border: none;
+  font-weight: 300;
+}
+
 #locale{
   font-weight: lighter;
   font-family: 'ACaslon-Pro';

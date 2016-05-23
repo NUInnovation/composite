@@ -35,6 +35,8 @@ gem 'figaro'
 # Ruby OpenCV for face detection
 gem 'ruby-opencv'
 
+gem 'responders'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
