@@ -31,7 +31,8 @@
 
 <% if not @flag %>
     <div>
-        <button onclick="addFaces()" class="load"><h3>Load More</h3></button>
+        <button onclick="addFaces()" class="load"><h3 id="loadText">Load More</h3>
+        <img src="assets/load.gif" id="gif"></button>
     </div>
 <% end %>
 
@@ -60,19 +61,34 @@
 </script>
 
 <script>
+
+var offset = 0.0;
+
 function addFaces() {
-  var compositeAPI = "http://localhost:3000/api/v1/home.json?lat="+ (parseFloat(<%=params[:lat]%>) + .015).toString() + "&lng=" + (parseFloat(<%=params[:lng]%>) + .015).toString();
-  console.log(compositeAPI);
+
+  offset += .015;
+
+  document.getElementById("loadText").style.display = "none";
+  document.getElementById("gif").style.display = "inline";
+
+  var compositeAPI = "http://localhost:3000/api/v1/home.json?lat="+ (parseFloat(<%=params[:lat]%>) + offset).toString() + "&lng=" + (parseFloat(<%=params[:lng]%>) + offset).toString();
+
   $.getJSON( compositeAPI, {
     format: "json"
   })
     .done(function( data ) {
-      console.log(data);
       $.each( data, function( i, item ) {
-        console.log(item.table.name);
-        $( "<img>" ).attr({"src":"/assets/"+item.table.name, "class":"images"}).appendTo($("a").attr({"href":item.table.link, "class":"links", "target":"_blank"})).appendTo("#faces");
+        $( "<img>" ).attr({"src":"/assets/"+item.table.name, "class":"images"}).appendTo("#faces");
       });
-      alert("done");
+      $(document).trigger('faces_complete');
     });
 }
+
+function loadGif() {
+    document.getElementById("loadText").style.display = "block";
+    document.getElementById("gif").style.display = "none";
+}
+
+$(document).bind('faces_complete', loadGif);
+
 </script>

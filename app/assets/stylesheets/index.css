@@ -93,3 +93,7 @@ input:focus {
 #empty {
   margin-top: 5em;
 }
+
+#gif {
+  display: none;
+}
