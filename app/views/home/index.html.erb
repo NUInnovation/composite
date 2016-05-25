@@ -1,7 +1,7 @@
 
 <div>
     <h1 class="title">Composite</h1>
-    <h5 class="tagline">GEOGRAPHIC FACE AGGREGATION</h5>
+    <h5 class="tagline">FACES FROM AROUND THE WORLD</h5>
     <center>
         <form>
             <input type="text" placeholder="Enter a location" class="search" id="txtPlaces" required>
@@ -13,8 +13,8 @@
     <%= params[:current] %>
 </div>    
 
-<div class="faces">
-    <center>
+<center>
+<div id="faces">
 
         <% if @flag %>
             <h5 id="empty">Search a location to get started.</h5>
@@ -26,12 +26,12 @@
             <% end %>
         <% end %>
 
-    </center>
 </div>
+</center>
 
 <% if not @flag %>
     <div>
-        <button class="load"><h3>Load More</h3></button>
+        <button onclick="addFaces()" class="load"><h3>Load More</h3></button>
     </div>
 <% end %>
 
@@ -57,4 +57,22 @@
             window.location.href = url;
         });
     });
+</script>
+
+<script>
+function addFaces() {
+  var compositeAPI = "http://localhost:3000/api/v1/home.json?lat="+ (parseFloat(<%=params[:lat]%>) + .015).toString() + "&lng=" + (parseFloat(<%=params[:lng]%>) + .015).toString();
+  console.log(compositeAPI);
+  $.getJSON( compositeAPI, {
+    format: "json"
+  })
+    .done(function( data ) {
+      console.log(data);
+      $.each( data, function( i, item ) {
+        console.log(item.table.name);
+        $( "<img>" ).attr({"src":"/assets/"+item.table.name, "class":"images"}).appendTo($("a").attr({"href":item.table.link, "class":"links", "target":"_blank"})).appendTo("#faces");
+      });
+      alert("done");
+    });
+}
 </script>
