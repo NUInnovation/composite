@@ -1,32 +1,35 @@
 
-<div>
-    <h1 class="title">Composite</h1>
-    <h5 class="tagline">FACES FROM AROUND THE WORLD</h5>
-    <center>
-        <form>
-            <input type="text" placeholder="Enter a location" class="search" id="txtPlaces" required>
-        </form>
-    </center>
+<div class="header">
+    <nav>
+        <a href="http://localhost:3000/"><h1 class="title">Composite</h1></a>
+        <h5 class="tagline">FACES FROM AROUND THE WORLD</h5>
+            <form id="search">
+                <input type="text" placeholder="Search a location" class="search" id="txtPlaces" required>
+            </form>
+    </nav>
 </div>
-
-<div id="locale">
-    <%= params[:current] %>
-</div>    
 
 <center>
-<div id="faces">
+    <div id="locale">
+        <%= params[:current] %>
+    </div>
+</center> 
 
-        <% if @flag %>
-            <h5 id="empty">Search a location to get started.</h5>
-        <% end %>
+<div id="map"></div>
 
-        <% @img_paths.each do |image| %>
-            <%= link_to image.link, :class => "links", :target => "_blank" do %>
-                <%= image_tag(image.name, :class => "images") %>
+<center> 
+    <div id="faces">
+            <% if @flag %>
+                <h5 id="empty">Search a location to get started.</h5>
             <% end %>
-        <% end %>
 
-</div>
+            <% @img_paths.each do |image| %>
+                <%= link_to image.link, :class => "links", :target => "_blank" do %>
+                    <%= image_tag(image.name, :class => "images") %>
+                <% end %>
+            <% end %>
+
+    </div>
 </center>
 
 <% if not @flag %>
@@ -36,9 +39,21 @@
     </div>
 <% end %>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: {lat: parseFloat(<%=params[:lat]%>), lng: parseFloat(<%=params[:lng]%>)},
+      zoom: 14,
+      scrollwheel: false,
+    });
+  }
+</script>
 
 <script type="text/javascript">
+    initMap();
     google.maps.event.addDomListener(window, 'load', function () {
         var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
         google.maps.event.addListener(places, 'place_changed', function () {
@@ -60,19 +75,14 @@
     });
 </script>
 
+
 <script>
-
 var offset = 0.0;
-
 function addFaces() {
-
   offset += .015;
-
   document.getElementById("loadText").style.display = "none";
   document.getElementById("gif").style.display = "inline";
-
   var compositeAPI = "http://localhost:3000/api/v1/home.json?lat="+ (parseFloat(<%=params[:lat]%>) + offset).toString() + "&lng=" + (parseFloat(<%=params[:lng]%>) + offset).toString();
-
   $.getJSON( compositeAPI, {
     format: "json"
   })
@@ -83,12 +93,9 @@ function addFaces() {
       $(document).trigger('faces_complete');
     });
 }
-
 function loadGif() {
     document.getElementById("loadText").style.display = "block";
     document.getElementById("gif").style.display = "none";
 }
-
 $(document).bind('faces_complete', loadGif);
-
 </script>

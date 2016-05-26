@@ -8,26 +8,34 @@
 body {
   font-family: 'ACaslon-Pro';
   color: #363636;
+  margin: 0;
+}
+
+a {
+  color: #363636;
 }
 
 .title {
-  text-align: center;
+  display: block;
   font-family: 'ACaslon-Pro';
   letter-spacing: .03em;
-  margin-top: 1em;
+  margin-top: .5em;
+  margin-left: 1em;
   margin-bottom: 0px;
+  float: left;
 }
 
 .tagline {
-  text-align: center;
+  display: block;
+  float: left;
   letter-spacing: .1em;
-  margin-top: .5em;
+  margin-top: 1.47em;
   color: #414141;
-  margin-bottom: .8em;
+  margin-left: 1em;
 }
 
 #faces {
-  margin-top: 2em;
+  /*padding-top: 4em;*/
 }
 
 .images {
@@ -35,6 +43,12 @@ body {
   height: 140px;
   margin: none;
   float: left;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 1em;
 }
 
 form {
@@ -47,6 +61,13 @@ form {
   padding:8px 15px;
   background: #fff;
   border:1px solid #363636;
+  float: right;
+}
+
+#search {
+  float: right;
+  margin-right: 2em;
+  margin-top: .6em;
 }
 
 .links {
@@ -80,14 +101,18 @@ input:focus {
   margin-bottom: 4em;
 }
 
+.header {
+  padding-top: 1em;
+}
+
 #locale{
   font-weight: lighter;
   font-family: 'ACaslon-Pro';
-  margin-left: 47px;
+/*  margin-left: 47px;
   margin-bottom: -15px;
   font-size: 14px;
-  margin-top: 20px;
-  color: #414141;
+  color: #414141;*/
+  padding-top: 4em;
 }
 
 #empty {
