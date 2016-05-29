@@ -43,12 +43,14 @@ a {
   height: 140px;
   margin: none;
   float: left;
+  cursor: pointer;
 }
 
 #map {
   width: 100%;
   height: 400px;
   margin-top: 1em;
+  z-index: 0;
 }
 
 form {
@@ -120,5 +122,29 @@ input:focus {
 }
 
 #gif {
+  display: none;
+}
+
+#shade {
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.9);
+    display: none;
+    z-index: 1;
+}
+
+#aGif {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   display: none;
 }
