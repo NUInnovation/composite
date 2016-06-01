@@ -37,7 +37,7 @@
 
 <% if not @flag %>
     <div>
-        <button onclick="addFaces()" class="load"><h3 id="loadText">Load More</h3>
+        <button id = "button" class="load"><h3 id="loadText">Load More</h3>
         <img src="assets/load.gif" id="gif"></button>
     </div>
 <% end %>
@@ -83,26 +83,24 @@
 
 <script>
 
-  var offset = 0.0;
+  var images = <%=raw @instagram2 %> ;
+
+  $('#button').on('click', function () {
+    addFaces();
+  });
 
   function addFaces() {
-    offset += .015;
     document.getElementById("loadText").style.display = "none";
     document.getElementById("gif").style.display = "inline";
-    var compositeAPI = "http://localhost:3000/api/v1/home.json?lat="+ (parseFloat(<%=params[:lat]%>) + offset).toString() + "&lng=" + (parseFloat(<%=params[:lng]%>) + offset).toString();
-    $.getJSON( compositeAPI, {
-      format: "json"
-    })
-      .done(function( data ) {
-        $.each( data, function( i, item ) {
-          $( "<img>" ).attr({"src":"/assets/"+item.table.name, "class":"images"}).appendTo("#faces");
-        });
-        $(document).trigger('faces_complete');
-      });
+    setTimeout(stopGif, 5000);
   }
+
   function stopGif() {
       document.getElementById("loadText").style.display = "block";
       document.getElementById("gif").style.display = "none";
+      $.each(images, function( index, value ) {
+        $( "<img>" ).attr({"src": "http://localhost:3000/" + value, "class":"images"}).appendTo("#faces");
+      });
   }
-  $(document).bind('faces_complete', stopGif);
+
 </script>
