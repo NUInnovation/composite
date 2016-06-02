@@ -85,7 +85,7 @@ class HomeController < ApplicationController
           face.name = file_name
           #face.link = photo.images.standard_resolution.url.to_s
           # face.link = "https://picstuff.xyz/media/" + photo.id.to_s
-          face.link = "no longer functional"
+          face.link = "https://www.instagram.com/p/BGC3WnwjE7E/"
           @img_paths.push(face)
           break if @img_paths.length >= 28 # enough photos for us to display
         end
