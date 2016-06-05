@@ -26,7 +26,7 @@ the user enters a location into the search bar at the top right of the screen. d
 * install ruby and ror
 * udpdate/install required gems - note, opencv gem is quite difficult to work with
 * create the ror db
-* create an instagram developer account to get keys and secrets for api - note, depreciated
+* create an instagram developer account to get keys and secrets for api
 * use figaro gem to hide all developer secrets as environment variables
 * 'rails s' from project directory to start the project
 
