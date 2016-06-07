@@ -8,6 +8,10 @@ eric brownrout, benjamin strick, william noglows
 
 composite lets users explore the faces of the world via instagram photos and geolocation.
 
+#### demo
+
+https://vimeo.com/169641640
+
 #### how it works
 
 the user enters a location into the search bar at the top right of the screen. during loading time, composite fetches images from the instagram api at this location, converts them to grayscale to increase the accuracy of face detection, and runs them through opencv frontal face detection. when enough faces have been detected, the cropped out faces are returned to the client and placed into a grid for the user to see. the user can load more images from the given location or explore the large interactive map above which provides a visualization of the location.
